@@ -298,6 +298,139 @@ function Rooms() {
           </div>
         </div>
       )}
+
+      {/* Edit Room Modal */}
+      {showEditModal && editingRoomId && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-gray-900">Edit Room</h3>
+              <button
+                onClick={() => setShowEditModal(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <form onSubmit={handleSaveEditRoom} className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Room Name
+                </label>
+                <input
+                  type="text"
+                  value={editingRoom.name}
+                  onChange={(e) => setEditingRoom(prev => ({ ...prev, name: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter room name"
+                  required
+                />
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Room Type
+                  </label>
+                  <select 
+                    value={editingRoom.type}
+                    onChange={(e) => setEditingRoom(prev => ({ ...prev, type: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  >
+                    <option>Standard</option>
+                    <option>Deluxe</option>
+                    <option>Suite</option>
+                    <option>Presidential</option>
+                    <option>Family</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Capacity
+                  </label>
+                  <select 
+                    value={editingRoom.capacity}
+                    onChange={(e) => setEditingRoom(prev => ({ ...prev, capacity: parseInt(e.target.value) }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  >
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={6}>6</option>
+                    <option value={8}>8</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Base Price (KES per night)
+                </label>
+                <input
+                  type="number"
+                  value={editingRoom.price}
+                  onChange={(e) => setEditingRoom(prev => ({ ...prev, price: parseInt(e.target.value) || 0 }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter base price"
+                  required
+                  min="0"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Amenities
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  {availableAmenities.map((amenity) => (
+                    <label key={amenity} className="flex items-center space-x-2">
+                      <input 
+                        type="checkbox" 
+                        checked={editingRoom.amenities.includes(amenity)}
+                        onChange={() => handleAmenityToggle(amenity, true)}
+                        className="rounded border-gray-300 text-blue-600 focus:ring-blue-500" 
+                      />
+                      <span className="text-sm text-gray-700">{amenity}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Description
+                </label>
+                <textarea
+                  rows={3}
+                  value={editingRoom.description}
+                  onChange={(e) => setEditingRoom(prev => ({ ...prev, description: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Room description"
+                ></textarea>
+              </div>
+              
+              <div className="pt-4 border-t border-gray-200 flex items-center justify-end space-x-3">
+                <button
+                  type="button"
+                  onClick={() => setShowEditModal(false)}
+                  className="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                >
+                  <Save className="h-4 w-4" />
+                  <span>Save Changes</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
