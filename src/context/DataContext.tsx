@@ -116,17 +116,17 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     {
       id: '2',
-      name: 'City Hotel',
+      name: 'Chalet Vasmobile',
       type: 'Hotel',
-      location: 'Nairobi, Kenya',
-      rating: 4.5,
-      rooms: 32,
-      occupancy: 72,
-      revenue: 'KES 98K',
-      image: 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=400',
+      location: 'Mount Kenya Region, Kenya',
+      rating: 4.8,
+      rooms: 24,
+      occupancy: 85,
+      revenue: 'KES 145K',
+      image: 'https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=400',
       status: 'active',
-      description: 'Modern business hotel in the heart of the city',
-      amenities: ['Business Center', 'Gym', 'Restaurant', 'WiFi', 'Parking']
+      description: 'Luxury mountain chalet resort with stunning alpine views and world-class amenities',
+      amenities: ['Mountain Views', 'Spa & Wellness', 'Restaurant', 'WiFi', 'Parking', 'Fireplace']
     },
     {
       id: '3',
@@ -160,26 +160,62 @@ export function DataProvider({ children }: { children: ReactNode }) {
     {
       id: '2',
       propertyId: '1',
-      name: 'Standard Room',
-      type: 'Standard',
+      name: 'Mountain View Suite',
+      type: 'Suite',
       capacity: 2,
-      price: 8000,
-      availability: 'occupied',
-      amenities: ['WiFi', 'AC', 'TV'],
-      image: 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Comfortable room with modern amenities'
+      price: 12000,
+      availability: 'available',
+      amenities: ['WiFi', 'AC', 'TV', 'Mountain View', 'Balcony'],
+      image: 'https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: 'Elegant suite with panoramic mountain views'
     },
     {
       id: '3',
       propertyId: '2',
-      name: 'Family Room',
+      name: 'Luxury Mountain Chalet',
+      type: 'Presidential',
+      capacity: 4,
+      price: 45000,
+      availability: 'available',
+      amenities: ['WiFi', 'AC', 'Fireplace', 'Mountain View', 'Private Balcony', 'Kitchenette'],
+      image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: 'Stunning mountain chalet with panoramic views, perfect for a romantic getaway'
+    },
+    {
+      id: '5',
+      propertyId: '2',
+      name: 'Cozy Forest Retreat',
+      type: 'Deluxe',
+      capacity: 2,
+      price: 32000,
+      availability: 'occupied',
+      amenities: ['WiFi', 'AC', 'Forest View', 'Private Deck', 'Hot Tub', 'Mini Bar'],
+      image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: 'Intimate forest retreat surrounded by nature, ideal for couples'
+    },
+    {
+      id: '6',
+      propertyId: '2',
+      name: 'Alpine Family Lodge',
       type: 'Family',
       capacity: 6,
-      price: 20000,
+      price: 58000,
+      availability: 'available',
+      amenities: ['WiFi', 'AC', 'Valley View', 'Full Kitchen', 'Living Room', 'Game Room'],
+      image: 'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: 'Spacious family lodge with all amenities needed for a perfect mountain vacation'
+    },
+    {
+      id: '7',
+      propertyId: '2',
+      name: 'Executive Mountain Suite',
+      type: 'Executive',
+      capacity: 3,
+      price: 38000,
       availability: 'maintenance',
-      amenities: ['WiFi', 'AC', 'Kitchen', 'Balcony'],
-      image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Spacious family room with kitchenette'
+      amenities: ['WiFi', 'AC', 'City View', 'Work Desk', 'Meeting Area', 'Coffee Machine'],
+      image: 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: 'Perfect for business travelers who want comfort and functionality'
     },
     {
       id: '4',
@@ -219,16 +255,16 @@ export function DataProvider({ children }: { children: ReactNode }) {
       guest: 'Bob Smith',
       email: 'bob@example.com',
       phone: '+254 711 234 567',
-      property: 'City Hotel',
+      property: 'Chalet Vasmobile',
       propertyId: '2',
-      room: 'Standard Room',
-      roomId: '2',
+      room: 'Luxury Mountain Chalet',
+      roomId: '3',
       checkIn: '2025-01-21',
       checkOut: '2025-01-23',
       nights: 2,
-      amount: 16000,
+      amount: 90000,
       status: 'pending',
-      channel: 'Booking.com',
+      channel: 'Direct Website',
       paymentStatus: 'pending',
       createdAt: '2025-01-16T14:30:00Z'
     }
@@ -249,13 +285,13 @@ export function DataProvider({ children }: { children: ReactNode }) {
     {
       id: 'TXN-002',
       bookingId: 'BK-002',
-      amount: 16000,
-      method: 'M-Pesa',
-      provider: 'Safaricom',
+      amount: 90000,
+      method: 'Card',
+      provider: 'DPO',
       status: 'pending',
       date: '2025-01-16',
       guest: 'Bob Smith',
-      property: 'City Hotel'
+      property: 'Chalet Vasmobile'
     }
   ]);
 

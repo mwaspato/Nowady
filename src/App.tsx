@@ -11,6 +11,7 @@ import FrontDesk from './pages/FrontDesk';
 import AdminPanel from './pages/AdminPanel';
 import Login from './pages/Login';
 import PropertyWebsite from './pages/PropertyWebsite';
+import ChaletWebsite from './pages/ChaletWebsite';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { DataProvider } from './context/DataContext';
 
@@ -33,6 +34,7 @@ function AppRoutes() {
         <Route path="/front-desk" element={<FrontDesk />} />
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/website" element={<PropertyWebsite />} />
+        <Route path="/chalet" element={<ChaletWebsite />} />
       </Routes>
     </Layout>
   );

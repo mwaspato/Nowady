@@ -18,6 +18,7 @@ function Sidebar() {
     { name: 'Commissions', href: '/commissions', icon: TrendingUp, roles: ['admin', 'property_manager'] },
     { name: 'Front Desk', href: '/front-desk', icon: Users, roles: ['property_manager', 'front_desk'] },
     { name: 'Website', href: '/website', icon: Globe, roles: ['property_manager'] },
+    { name: 'Chalet Site', href: '/chalet', icon: Globe, roles: ['property_manager', 'admin'] },
     { name: 'Admin Panel', href: '/admin', icon: Shield, roles: ['admin'] },
   ];
 
